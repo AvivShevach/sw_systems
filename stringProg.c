@@ -80,9 +80,9 @@ int main()
 printf("Gematria Sequences: ");
 for(int i=0;c[i]!='\0';i++)
 {
-	if(m[i]>='a' && m[i]<='z')
+	if(c[i]>='a' && c[i]<='z')
    		 g+=c[i]-'a'+1;
-	else if(m[i]>='A' && m[i]<='Z')
+	else if(c[i]>='A' && c[i]<='Z')
 		 g+=c[i]-'A'+1;
 }
 for(int i=0; m[i]!='~'; i++)
