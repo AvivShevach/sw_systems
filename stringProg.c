@@ -78,8 +78,8 @@ int main()
     get_word(  );
     get_txt(  );
 
-    // strcpy(c,"aba");
-    // strcpy(m, "aabzyzz a#  abaab~");
+    // strcpy(c,"Head");
+    // strcpy(m, "Head, shoulders, knees and toes,Knees and toes.Head, shoulders, knees and toes,Knees and toes.And eyes, and ears, and mouth, and nose.Head, shoulders, knees and toes,Knees and toes.~");
 	strcpy(c4,c);
 
 
@@ -90,7 +90,10 @@ int main()
 printf("Gematria Sequences: ");
 for(int i=0;c[i]!='\0';i++)
 {
-    g+=c[i]-'a'+1;
+	if(m[i]>='a' && m[i]<='z')
+   		 g+=c[i]-'a'+1;
+	else if(m[i]>='A' && m[i]<='Z')
+		 g+=c[i]-'A'+1;
 }
 //printf("%d", g);
 for(int i=0; m[i]!='~'; i++)
@@ -134,10 +137,15 @@ for(int i=0;c[i]!='\0';i++)
 
 }
 int size = strlen(c);
-for(int i=size;i>=0;i--)
+
+for( int i =0; i<size; i++)
 {
-	c3[size-i]=c2[i];
+	c3[i] = c2[size-i-1];
 }
+// for(int i=size-1;i>=0;i--)
+// {
+// 	c3[size-i]=c2[i-1];
+// }
 for(int i=0;m[i]!='~';i++)
 {
 	int x=i;
@@ -159,7 +167,7 @@ for(int i=0;m[i]!='~';i++)
 			}
 		else
 			break;
-		if(j==size)
+		if(j==size-1)
 		{
 			if(num!=0)
 				printf("~");
@@ -191,7 +199,7 @@ for(int i=0;m[i]!='~';i++)
 				}
 			else
 				break;
-			if(j==size)
+			if(j==size-1)
 			{
 				if(num!=0)
 					printf("~");
