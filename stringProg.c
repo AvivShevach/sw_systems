@@ -52,7 +52,7 @@ void get_word( )
 {
 	for (int i = 0; i < WORD; i++)
 	{
-		c[i] = getchar(); //(" %c", &c[i]);
+		c[i] = getchar();
 		if((c[i]=='\n') || (c[i]=='\t') || (c[i]==' '))
 		{
 			c[i]='\0';
@@ -65,7 +65,7 @@ void get_txt( )
 {
 	for (int i = 0; i < TXT; i++)
 	{
-		m[i] = getchar(); //scanf(" %c", &c[i]);
+		m[i] = getchar();
 		if(m[i]=='~')
 			break;
 	}
@@ -74,19 +74,9 @@ void get_txt( )
 int main() 
 {
 	int g=0,g2=0,a=0,num=0;
-
     get_word(  );
     get_txt(  );
-
-    // strcpy(c,"Head");
-    // strcpy(m, "Head, shoulders, knees and toes,Knees and toes.Head, shoulders, knees and toes,Knees and toes.And eyes, and ears, and mouth, and nose.Head, shoulders, knees and toes,Knees and toes.~");
 	strcpy(c4,c);
-
-
-    	// printf("c = %s\n", c);
-	// printf("m = %s\n", m);
-	
-   //char m[]="I'mbebe be ,y,vvyvy bringing home my baby bumble ,bee Won't my Mommy be so proud of me I'm bringing home my baby bumble bee-OUCH!! It stung me!!~";
 printf("Gematria Sequences: ");
 for(int i=0;c[i]!='\0';i++)
 {
@@ -95,7 +85,6 @@ for(int i=0;c[i]!='\0';i++)
 	else if(m[i]>='A' && m[i]<='Z')
 		 g+=c[i]-'A'+1;
 }
-//printf("%d", g);
 for(int i=0; m[i]!='~'; i++)
 {
 for(int j=i; m[j]!='~'; j++)
@@ -142,10 +131,6 @@ for( int i =0; i<size; i++)
 {
 	c3[i] = c2[size-i-1];
 }
-// for(int i=size-1;i>=0;i--)
-// {
-// 	c3[size-i]=c2[i-1];
-// }
 for(int i=0;m[i]!='~';i++)
 {
 	int x=i;
