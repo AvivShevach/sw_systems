@@ -1,5 +1,8 @@
+.PHONY = all clean
 
-all: stringProg.c
+all: stringProg
+
+stringProg: stringProg.c
 	gcc -g stringProg.c -o stringProg
 
 clean:
